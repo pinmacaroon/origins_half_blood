@@ -1,69 +1,44 @@
 {
-    "type": "origins:multiple",
-    "rage": {
-        "type": "origins:resource",
-        "min": 0,
-        "max": 20,
-        "hud_render": {
-            "should_render": true,
-            "bar_index": 2
-        },
-        "min_action": {
-            "type": "origins:play_sound",
-            "sound": "minecraft:block.beacon.deactivate"
-        },
-        "max_action": {
-            "type": "origins:play_sound",
-            "sound": "minecraft:block.beacon.activate"
-        }
-    },
-    "fill": {
-        "type": "origins:action_when_damage_taken",
-        "entity_action": {
-            "type": "origins:change_resource",
-            "resource": "*:*_rage",
-            "change": 1
-        },
-        "cooldown": 10
-    },
-    "cool": {
-        "type": "origins:action_over_time",
-        "entity_action": {
-            "type": "origins:and",
-            "actions": [
-                {
-                    "type": "origins:change_resource",
-                    "resource": "*:*_rage",
-                    "change": -1
-                },
-                {
-                    "type": "origins:play_sound",
-                    "sound": "minecraft:block.lava.extinguish"
+    "type": "origins:action_on_hit",
+    "bientity_action": {
+        "type": "origins:and",
+        "actions": [
+            {
+                "type": "origins:target_action",
+                "action": {
+                    "type": "origins:spawn_entity",
+                    "entity_type": "minecraft:lightning_bolt"
                 }
-            ]
-        },
-        "interval": 300,
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_rage",
-            "comparison": ">",
-            "compare_to": 0
-        }
+            },
+            {
+                "type": "origins:actor_action",
+                "action": {
+                    "type": "origins:change_resource",
+                    "resource": "origins_half_blood:zeus/rage_rage",
+                    "change": -10
+                }
+            }
+        ]
     },
-    "glow": {
-        "type": "origins:self_glow",
-        "bientity_condition": {
-            "type": "origins:can_see"
-        },
-        "use_teams": false,
-        "red": 1.0,
-        "green": 1.0,
-        "blue": 0.0,
-        "condition": {
-            "type": "origins:resource",
-            "resource": "*:*_rage",
-            "comparison": ">",
-            "compare_to": 14
-        }
-    }
+    "cooldown": 17,
+    "hud_render": {
+        "should_render": false
+    },
+    "condition": {
+        "type": "origins:and",
+        "conditions": [
+            {
+                "type": "origins:resource",
+                "resource": "origins_half_blood:zeus/rage_rage",
+                "comparison": "==",
+                "compare_to": 10
+            },
+            {
+                "type": "origins:on_block",
+                "inverted": true
+            }
+        ]
+    },
+    "name": "Smite",
+    "description": "If enraged enough, children of Zeus can summon their lightning bolt from the sky to hit foes. Getting enraged is as simple as taking damage."
 }

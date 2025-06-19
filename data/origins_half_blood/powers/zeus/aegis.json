@@ -1,0 +1,13 @@
+{
+    "name": "Aegis",
+    "description": "Children of Zeus have a replica of the shield Aegis, just as useful as the original.",
+    "type": "origins:starting_equipment",
+    "stacks": [
+        {
+            "item": "minecraft:shield",
+            "amount": 1,
+            "tag": "{Unbreakable:1b,Enchantments:[{id:vanishing_curse,lvl:1}],display:{Name:'{\"text\":\"Aegis\"}'},BlockEntityTag:{Base:12,Patterns:[{Color:5,Pattern:\"mr\"},{Color:13,Pattern:\"mc\"}]}}"
+        }
+    ],
+    "recurrent": true
+}

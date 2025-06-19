@@ -1,7 +1,7 @@
 {
     "type": "origins:multiple",
     "name": "Uncle's Realm",
-    "description": "Children of Zeus cannot go into water without getting a \"warm welcome\" from their uncle, Poseidon.",
+    "description": "Children of Zeus cannot go into water without getting a \"warm welcome\" from their uncle, Poseidon. Boats also don't work.",
     "hurt": {
         "type": "origins:damage_over_time",
         "interval": 13,
@@ -30,6 +30,23 @@
             "fluid": "minecraft:water",
             "comparison": ">",
             "compare_to": 0.0
+        }
+    },
+    "sail": {
+        "type": "origins:prevent_entity_use",
+        "bientity_action": {
+            "type": "origins:actor_action",
+            "action": {
+                "type": "origins:execute_command",
+                "command": "title @s actionbar {\"text\":\"Cannot interact with boats!\",\"color\":\"red\"}"
+            }
+        },
+        "bientity_condition": {
+            "type": "origins:target_condition",
+            "condition": {
+                "type": "origins:in_tag",
+                "tag": "*:boat"
+            }
         }
     }
 }
