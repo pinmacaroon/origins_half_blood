@@ -1,0 +1,35 @@
+{
+    "type": "origins:multiple",
+    "name": "Uncle's Realm",
+    "description": "Children of Zeus cannot go into water without getting a \"warm welcome\" from their uncle, Poseidon.",
+    "hurt": {
+        "type": "origins:damage_over_time",
+        "interval": 13,
+        "onset_delay": 1,
+        "damage": 3,
+        "damage_easy": 1,
+        "damage_type": "origins:hurt_by_water",
+        "protection_enchantment": "origins:water_protection",
+        "protection_effectiveness": 1.0,
+        "condition": {
+            "type": "origins:or",
+            "conditions": [
+                {
+                    "type": "origins:fluid_height",
+                    "fluid": "minecraft:water",
+                    "comparison": ">",
+                    "compare_to": 0.0
+                }
+            ]
+        }
+    },
+    "swim": {
+        "type": "origins:prevent_sprinting",
+        "condition": {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:water",
+            "comparison": ">",
+            "compare_to": 0.0
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "type": "origins:multiple",
+    "name": "Power of the Big Three",
+    "description": "Children of the Big Three have enhanced speed, strength and healing power.",
+    "healing": {
+        "type": "origins:modify_healing",
+        "modifier": {
+            "operation": "multiply_total_multiplicative",
+            "value": 0.5
+        }
+    },
+    "speed": {
+        "type": "origins:modify_velocity",
+        "modifier": {
+            "value": 0.25,
+            "operation": "multiply_total_multiplicative"
+        },
+        "axes": ["x", "z"]
+    },
+    "strength": {
+        "type": "origins:attribute",
+        "modifier": {
+            "name": "Max health increase",
+            "attribute": "minecraft:generic.max_health",
+            "value": 2,
+            "operation": "addition"
+        }
+    }
+}

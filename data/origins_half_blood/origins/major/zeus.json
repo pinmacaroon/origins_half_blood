@@ -1,0 +1,13 @@
+{
+    "powers": [
+        "origins_half_blood:b3/strength",
+        "origins_half_blood:zeus/swim",
+        "origins_half_blood:zeus/smite"
+    ],
+    "icon": {
+        "item": "minecraft:lightning_rod"
+    },
+    "impact": 3,
+    "name": "Zeus",
+    "description": "God of lightning, thunder and the sky and the king of Olympus."
+}

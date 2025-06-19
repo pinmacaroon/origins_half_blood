@@ -1,0 +1,99 @@
+{
+    "name": "Temperature Trouble",
+    "description": "Zephyrus' children are picky about temperature. Cooler than in a jungle and warmer than in a taiga is just right.",
+    "type": "origins:multiple",
+    "cold": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "duration": 25,
+                        "amplifier": 1,
+                        "show_particles": false,
+                        "is_ambient": true
+                    }
+                }
+            ]
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:biome",
+            "condition": {
+                "type": "origins:temperature",
+                "comparison": "<",
+                "compare_to": 0.5
+            }
+        }
+    },
+    "cold_overlay": {
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/misc/powder_snow_outline.png",
+        "strength": 0.6,
+        "red": 1.0,
+        "green": 1.0,
+        "blue": 1.0,
+        "draw_mode": "texture",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": false,
+        "condition": {
+            "type": "origins:biome",
+            "condition": {
+                "type": "origins:temperature",
+                "comparison": "<",
+                "compare_to": 0.5
+            }
+        }
+    },
+    "hot": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "duration": 25,
+                        "amplifier": 1,
+                        "show_particles": false,
+                        "is_ambient": true
+                    }
+                }
+            ]
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:biome",
+            "condition": {
+                "type": "origins:temperature",
+                "comparison": ">",
+                "compare_to": 0.95
+            }
+        }
+    },
+    "hot_overlay": {
+        "type": "origins:overlay",
+        "texture": "minecraft:textures/misc/nausea.png",
+        "strength": 0.6,
+        "red": 1.0,
+        "green": 0.345,
+        "blue": 0,
+        "draw_mode": "nausea",
+        "draw_phase": "below_hud",
+        "hide_with_hud": false,
+        "visible_in_third_person": false,
+        "condition": {
+            "type": "origins:biome",
+            "condition": {
+                "type": "origins:temperature",
+                "comparison": ">",
+                "compare_to": 0.95
+            }
+        }
+    }
+}

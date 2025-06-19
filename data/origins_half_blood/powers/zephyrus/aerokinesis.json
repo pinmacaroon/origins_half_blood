@@ -1,0 +1,161 @@
+{
+    "name": "Aerokinesis",
+    "description": "Zephyrus' children can bend air to their will.",
+    "type": "origins:multiple",
+    "push": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 16,
+            "block": false,
+            "entity": true,
+            "shape_type": "collider",
+            "fluid_handling": "any",
+            "bientity_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:add_velocity",
+                        "z": 2,
+                        "y": 1.5
+                    },
+                    {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:play_sound",
+                                    "sound": "minecraft:entity.parrot.imitate.breeze"
+                                },
+                                {
+                                    "type": "origins:spawn_particles",
+                                    "particle": "minecraft:poof",
+                                    "count": 16,
+                                    "speed": 0.0,
+                                    "force": true,
+                                    "spread": { "x": 0.7, "y": 0.7, "z": 0.7 }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "before_action": {
+                "type": "origins:add_velocity",
+                "y": 0
+            },
+            "hit_action": {
+                "type": "origins:execute_command",
+                "command": "say After (hit)"
+            },
+            "command_at_hit": "particle minecraft:explosion_emitter ~ ~1 ~ ~ ~1 ~ 0.01 2 force @a",
+            "command_along_ray": "particle poof ^ ^ ^ 0.4 .1 0 0.001 2 normal @a",
+            "command_step": 0.5,
+            "command_along_ray_only_on_hit": false
+        },
+        "cooldown": 200,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "should_render": true,
+            "bar_index": 8
+        },
+        "key": {
+            "key": "key.attack",
+            "continuous": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                }
+            ]
+        }
+    },
+    "pull": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:raycast",
+            "distance": 16,
+            "block": false,
+            "entity": true,
+            "shape_type": "collider",
+            "fluid_handling": "any",
+            "bientity_action": {
+                "type": "origins:and",
+                "actions": [
+                    {
+                        "type": "origins:add_velocity",
+                        "z": -2,
+                        "y": 1
+                    },
+                    {
+                        "type": "origins:target_action",
+                        "action": {
+                            "type": "origins:and",
+                            "actions": [
+                                {
+                                    "type": "origins:play_sound",
+                                    "sound": "minecraft:entity.parrot.imitate.breeze"
+                                },
+                                {
+                                    "type": "origins:spawn_particles",
+                                    "particle": "minecraft:poof",
+                                    "count": 16,
+                                    "speed": 0.0,
+                                    "force": true,
+                                    "spread": { "x": 0.7, "y": 0.7, "z": 0.7 }
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            "before_action": {
+                "type": "origins:add_velocity",
+                "y": 0
+            },
+            "hit_action": {
+                "type": "origins:execute_command",
+                "command": "say After (hit)"
+            },
+            "command_at_hit": "particle minecraft:explosion_emitter ~ ~1 ~ ~ ~1 ~ 0.01 2 force @a",
+            "command_along_ray": "particle poof ^ ^ ^ 0.4 .1 0 0.001 2 normal @a",
+            "command_step": 0.5,
+            "command_along_ray_only_on_hit": false
+        },
+        "cooldown": 200,
+        "hud_render": {
+            "sprite_location": "origins:textures/gui/community/huang/resource_bar_01.png",
+            "should_render": true,
+            "bar_index": 8
+        },
+        "key": {
+            "key": "key.use",
+            "continuous": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking"
+                },
+                {
+                    "type": "origins:equipped_item",
+                    "equipment_slot": "mainhand",
+                    "item_condition": {
+                        "type": "origins:empty"
+                    }
+                }
+            ]
+        }
+    }
+}

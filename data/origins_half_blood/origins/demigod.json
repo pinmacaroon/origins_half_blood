@@ -1,0 +1,11 @@
+{
+    "powers": [
+		"origins_half_blood:godly_parent"
+	],
+    "icon": {
+        "item": "minecraft:campfire"
+    },
+    "impact": 3,
+    "name": "Demigod",
+    "description": "\"Look, I didn't want to be a half-blood.\" You did not choose this destiny, yet the fates wanted you to suffer. Your life will be full of hardships, with monsters snuffing you out any time you find a mere glimpse of peace. Some may consider your powers to be cool, but you know the curse they bear upon you, the gods expect greatness."
+}

@@ -1,0 +1,20 @@
+{
+    "order": 1,
+	"replace": true,
+	"allow_random": true,
+    "name": "Godly Parent",
+	"origins": [
+        {
+            "condition": {
+                "type": "origins:origin",
+                "origin": "origins_half_blood:demigod",
+                "layer": "origins:origin"
+            },
+            "origins": [
+                "origins_half_blood:minor/zephyrus",
+                "origins_half_blood:major/aphrodite",
+                "origins_half_blood:major/zeus"
+            ]
+        }
+	]
+}

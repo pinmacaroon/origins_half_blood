@@ -1,0 +1,13 @@
+{
+    "powers": [
+        "origins_half_blood:zephyrus/picky_temperature",
+        "origins_half_blood:zephyrus/wings",
+        "origins_half_blood:zephyrus/aerokinesis"
+    ],
+    "icon": {
+        "item": "minecraft:white_dye"
+    },
+    "impact": 2,
+    "name": "Zephyrus",
+    "description": "God of the west wind and the messenger of spring."
+}

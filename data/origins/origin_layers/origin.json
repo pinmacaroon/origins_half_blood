@@ -1,0 +1,8 @@
+{
+	"replace": true,
+	"allow_random": false,
+	"origins": [
+		"origins:human",
+		"origins_half_blood:demigod"
+	]
+}

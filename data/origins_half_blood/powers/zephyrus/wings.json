@@ -1,0 +1,118 @@
+{
+    "name": "Wings of Clouds",
+    "description": "Zephyrus' children can manifest wings at will, but using them drains them greatly.",
+    "type": "origins:multiple",
+    "toggle": {
+        "type": "origins:toggle",
+        "active_by_default": false,
+        "retain_state": false,
+        "key": {
+            "key": "key.origins.secondary_active"
+        },
+        "condition": {
+            "type": "origins:food_level",
+            "comparison": ">=",
+            "compare_to": 6
+        }
+    },
+    "toggle_effect": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:item.armor.equip_elytra"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.parrot.imitate.breeze"
+                }
+            ]
+        },
+        "falling_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:item.armor.equip_elytra"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.parrot.imitate.breeze"
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:weakness",
+                        "duration": 200,
+                        "amplifier": 1,
+                        "show_particles": false
+                    }
+                }
+            ]
+        },
+        "interval": 5,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_toggle"
+        }
+    },
+    "hunger": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:exhaust",
+            "amount": 0.6
+        },
+        "interval": 13,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_toggle"
+        }
+    },
+    "wings": {
+        "type": "origins:elytra_flight",
+        "render_elytra": true,
+        "condition": {
+            "type": "origins:power_active",
+            "power": "*:*_toggle"
+        }
+    },
+    "boost": {
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:fall_flying"
+                }
+            ]
+        },
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:add_velocity",
+                    "z": 1,
+                    "space": "local",
+                    "client": true,
+                    "server": true,
+                    "set": true
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle poof ^ ^ ^-.1 0.4 .1 0 0.001 2 normal @a"
+                },
+                {
+                    "type": "origins:exhaust",
+                    "amount": 0.4
+                }
+            ]
+        },
+        "cooldown": 1,
+        "key": {
+            "key": "key.jump",
+            "continuous": true
+        }
+    }
+}
