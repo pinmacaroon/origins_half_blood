@@ -5,7 +5,8 @@
         "origins_half_blood:zeus/rage",
         "origins_half_blood:zeus/smite",
         "origins_half_blood:zeus/lightning",
-        "origins_half_blood:zeus/aegis"
+        "origins_half_blood:zeus/aegis",
+        "origins_half_blood:zeus/claustrophobia"
     ],
     "icon": {
         "item": "minecraft:lightning_rod"
