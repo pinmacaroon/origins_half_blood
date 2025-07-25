@@ -1,7 +1,7 @@
 # TODO
 
-* Zeus
-* Poseidon
+* ~~Zeus~~
+* ~~Poseidon~~
 * Hades
 * Hermes
 * Apollo

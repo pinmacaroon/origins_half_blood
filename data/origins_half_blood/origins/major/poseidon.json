@@ -1,0 +1,15 @@
+{
+    "powers": [
+        "origins_half_blood:b3/strength",
+        "origins_half_blood:poseidon/swim",
+        "origins_half_blood:poseidon/see",
+        "origins_half_blood:poseidon/water_breathing",
+        "origins_half_blood:poseidon/sky"
+    ],
+    "icon": {
+        "item": "minecraft:trident"
+    },
+    "impact": 3,
+    "name": "Poseidon",
+    "description": "God of the sea, water and sea storms."
+}

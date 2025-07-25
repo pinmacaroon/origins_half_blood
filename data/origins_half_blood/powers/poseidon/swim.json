@@ -1,0 +1,11 @@
+{
+    "name": "Currents at Will",
+    "description": "Children of the god of the sea can swim faster than others.",
+    "type": "origins:attribute",
+    "modifier": {
+        "attribute": "additionalentityattributes:water_speed",
+        "name": "Additional swim speed",
+        "value": 1.6,
+        "operation": "multiply_base"
+    }
+}

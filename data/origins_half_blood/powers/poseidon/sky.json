@@ -1,0 +1,5 @@
+{
+    "type": "origins:prevent_elytra_flight",
+    "name": "Zeus' Realm",
+    "description": "Children of Poseidon cannot fly with an elytra."
+}

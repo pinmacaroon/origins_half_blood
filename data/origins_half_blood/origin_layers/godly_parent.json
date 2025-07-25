@@ -13,7 +13,8 @@
             "origins": [
                 "origins_half_blood:minor/zephyrus",
                 "origins_half_blood:major/aphrodite",
-                "origins_half_blood:major/zeus"
+                "origins_half_blood:major/zeus",
+                "origins_half_blood:major/poseidon"
             ]
         }
 	]
